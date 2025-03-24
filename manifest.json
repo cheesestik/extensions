@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Annoying Messages",
+  "version": "1.0",
+  "description": "Displays occasional annoying messages while you browse.",
+  "icons": {
+    "48": "icon.png"
+  },
+  "permissions": ["storage", "activeTab", "notifications"],
+  "action": {
+    "default_popup": "annoying.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
