@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Annoying Messages</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 24px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Prepare to be Annoyed!</h1>
+  <button id="trigger">Annoy Me!</button>
+  <script>
+    document.getElementById("trigger").addEventListener("click", () => {
+      chrome.runtime.sendMessage({ annoying: true });
+    });
+  </script>
+</body>
+</html>
