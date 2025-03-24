@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Printer Aid 1.24</title>
+  <title>Annoying Messages</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -21,10 +21,6 @@
 <body>
   <h1>Prepare to be Annoyed!</h1>
   <button id="trigger">Annoy Me!</button>
-  <script>
-    document.getElementById("trigger").addEventListener("click", () => {
-      chrome.runtime.sendMessage({ annoying: true });
-    });
-  </script>
+  <script src="popup.js"></script> <!-- Link to the new external JS -->
 </body>
 </html>
