@@ -1,8 +1,24 @@
-// Send a message to content script occasionally
+// Function to annoy the user
 function annoyUser() {
   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
     if (tabs.length > 0) {
-      chrome.tabs.sendMessage(tabs[0].id, { annoying: true });
+      const tabId = tabs[0].id;
+
+      // Inject content script if not already present
+      chrome.scripting.executeScript(
+        {
+          target: { tabId: tabId },
+          files: ["content.js"]
+        },
+        () => {
+          // Only send message if content script is properly injected
+          chrome.tabs.sendMessage(tabId, { annoying: true }, () => {
+            if (chrome.runtime.lastError) {
+              console.warn("Message not sent:", chrome.runtime.lastError.message);
+            }
+          });
+        }
+      );
     }
   });
 
