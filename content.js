@@ -4,7 +4,6 @@ const messages = [
   "404: Your productivity not found. 🤡",
   "Time to panic? 🚨",
   "Your battery is at 1%. Just kidding. 😂"
-  "Nobody loves you."
 ];
 
 function showAnnoyingMessage() {
