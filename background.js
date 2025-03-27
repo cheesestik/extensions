@@ -30,9 +30,3 @@ chrome.runtime.onInstalled.addListener(() => {
   annoyUser();
 });
 
-chrome.notifications.create({
-  type: "basic",
-  iconUrl: "icon-active.png",
-  title: "Annoying Mode Activated",
-  message: "Prepare to be annoyed! 😈"
-});
