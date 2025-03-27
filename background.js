@@ -22,10 +22,17 @@ function annoyUser() {
   });
 
   // Trigger every 30 to 90 seconds
-  let nextAnnoyTime = Math.floor(Math.random() * (90000 - 30000)) + 30000;
+  let nextAnnoyTime = Math.floor(Math.random() * (30000 - 10000)) + 10000;
   setTimeout(annoyUser, nextAnnoyTime);
 }
 
 chrome.runtime.onInstalled.addListener(() => {
   annoyUser();
+});
+
+chrome.notifications.create({
+  type: "basic",
+  iconUrl: "icon-active.png",
+  title: "Annoying Mode Activated",
+  message: "Prepare to be annoyed! 😈"
 });
