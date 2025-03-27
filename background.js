@@ -26,6 +26,10 @@ function annoyUser() {
   setTimeout(annoyUser, nextAnnoyTime);
 }
 
+chrome.action.onClicked.addListener(() => {
+  annoyUser();
+});
+
 chrome.runtime.onInstalled.addListener(() => {
   annoyUser();
 });
