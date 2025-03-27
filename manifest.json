@@ -6,12 +6,15 @@
   "icons": {
     "48": "icon.png"
   },
+  "action": {
+    "default_popup": "annoying.html",
+    "default_icon": {
+      "48": "icon.png"
+    }
+  },
   "permissions": ["storage", "activeTab", "notifications"],
   "background": {
     "service_worker": "background.js"
-  },
-  "action": {
-    "default_popup": "annoying.html"
   },
   "content_scripts": [
     {
